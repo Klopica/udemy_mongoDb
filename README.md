@@ -50,3 +50,118 @@ If we make this game a function with ```Promise```, when we call the function, w
 In our small game, when we call ```startGame()``` function, it returns the Promise that was created.
 When we resolve the promise, any function passed to ```.then()``` will be called.
 When we reject the promise, any function passed to ```.catch()``` will be called.
+
+## Core Fundamentals of MongoDB
+### Where do we use Mongo?
+Mongo stores data that needs to be persisted in any application.
+
+### What is Mongoose?
+Mongoose is ORM or ODM (Object Relational Mapper or Object Data Mapping). Mongoose allows us to work with mongodb in much easier fashion than if we were using core mongo APIs.
+
+### Fundamentals of MongoDB
+Mongo bases all of its data storage around two different ideas.
+1. Mongo allows us to have multiple internal databases inside a single Mongo instance.
+2. Collections
+
+### Last touch of setup
+Core Mongoose/Mongo:
+
+Create, Read, Update, Destroy.
+
+
+## A Test Driven Experience
+### Project overview
+
+
+### The Test Helper file
+
+
+### Mongoose Connection Helper
+
+
+### Mongoose Models
+
+
+### More on Models
+
+
+### The Basics of Mocha
+
+
+### Running Mocha test
+
+
+### Creating Model Instances
+
+
+### Saving Users to Mongo
+
+
+### Dropping Collections
+
+
+### Mocha's Done Callback
+
+
+### Mongoose's isNew Property
+
+
+### Default Promise Implementation
+
+
+### Test Setup for Finding Users
+
+
+### Making Mongo Queries
+
+
+### The ID Property - A Big Gotcha
+
+
+### Automating test with Nodemon
+
+
+### Finding Particular Records
+
+
+### The Many Ways to Remove Records
+
+
+### Class Based Removes
+
+
+### More Class Based Removals
+
+
+### The Many Ways to Update
+
+
+### Set and Save for Updating Records
+
+
+### Model Instance Updates
+
+
+### Class Based Updates
+
+
+## Mongo Operators
+### Update operators
+
+
+### The Increment Update Operator
+
+
+### Validation of Records
+
+
+### Requiring Attributes on a Model
+
+
+### Validation With A Validator Function
+
+
+### Handling Failed Inserts
+
+
+## Handling Relational Data
