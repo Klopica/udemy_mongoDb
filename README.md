@@ -71,7 +71,40 @@ Create, Read, Update, Destroy.
 
 ## A Test Driven Experience
 ### Project overview
+In the last section we created 'users' folder and it will contain out first test project.
 
+First we need to generate package.json inside created directory.
+```
+cd users
+npm init
+```
+
+Install project dependencies.
+```
+npm install --save mocha nodemon mongoose
+```
+
+The goal of this test project is mastering of the very common four fundamental mongo database operations: create, read, update and destroy data. For these purposes we will create a simple application with no frontend or UI components.
+We will create Mongo database with collection of users. User will be a simple object with some basic information.
+Then we are going to wire up this collection of users to the Mongoose library.
+Finally we are going to use Mocha testing framework to test our setup and make sure we are actually storing information to database.
+
+Project structure:
+Create folder ```/src``` and file user.js inside it.
+user.js file will contain code that connects MongoDB and Mongoose together.
+```
+mkdir src
+touch src/user.js
+```
+
+Create folder ```/test``` and files that will contain test for CRUD operations.
+```
+mkdir test
+touch test/create_test.js
+touch test/read_test.js
+touch test/update_test.js
+touch test/destroy_test.js
+```
 
 ### The Test Helper file
 
