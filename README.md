@@ -132,12 +132,33 @@ Model will also be used to create objects that represent single instances or sin
 All models also have a very important property: Schema.
 Schema tells us exactly what properties to expect for each record in collection to have and what type of data we expect it to be.
 
-For our test project we will create a User model in 'src/user.js' file.
-```
+For our test project we will create a User model in 'users/src/user.js' file.
 
-```
 ### More on Models
+Add Schema and Model to 'users/src/user.js'
+```
+/**
+* Dependencies
+*/
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
+// Define User Schema
+const UserSchema = new Schema({
+  name: String
+})
+
+// Define User Model
+const User = mongoose.model('user', UserSchema)
+
+// Export the User model
+module.exports = User
+
+```
+After defining model, mongoose creates defined model as a new collection inside our defined database.
+Mongoose creates this collection with all properties that are defined in Schema.
+This model does not represent a single user, it represents an entire collection of data.
+We need to make sure that any other file in this project has an access to user model we just created. We can do so with ```module.exports``` command.
 
 ### The Basics of Mocha
 
