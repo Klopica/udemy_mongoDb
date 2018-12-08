@@ -124,8 +124,18 @@ node test/test_helper.js
 If everything went OK, message "Good to go!" should be visible in our console.
 
 ### Mongoose Models
+In this part we will use mongoose to create a new collection of data. We are going to create a collection of users.
+To create this users collection, we need to understand a little bit how mongoose really works.
+We use mongoose to create Models that represent a record that is a very specific collection. Model represents all of the records that sit inside a collection.
+Model will also be used to create objects that represent single instances or single records within our collection as well.
 
+All models also have a very important property: Schema.
+Schema tells us exactly what properties to expect for each record in collection to have and what type of data we expect it to be.
 
+For our test project we will create a User model in 'src/user.js' file.
+```
+
+```
 ### More on Models
 
 
