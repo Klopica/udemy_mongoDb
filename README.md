@@ -137,21 +137,15 @@ For our test project we will create a User model in 'users/src/user.js' file.
 ### More on Models
 Add Schema and Model to 'users/src/user.js'
 ```
-/**
-* Dependencies
-*/
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-// Define User Schema
 const UserSchema = new Schema({
   name: String
 })
 
-// Define User Model
 const User = mongoose.model('user', UserSchema)
 
-// Export the User model
 module.exports = User
 
 ```
@@ -175,8 +169,22 @@ Inside every 'it' block we need to make an assertion.
 
 ### Running Mocha test
 How to make an assertion inside our test file?
+Inside an 'it' block we need to make an actual assertion, something that is going to compare one information to the other. Mocha gives us global access to 'describe' and 'it' functions, but it does not give us global access to anything we need to make an assertion.
 
+For assertions we will use node module 'assert'.
+To run our test, in the command line run ```npm run test``` but first we need to define our test scripts inside 'package.json'. To be able to run this test, we need to position in folder that contains this 'package.json' file.
 
+Below is a sample code with a simple assertion that we expect to be true. This means that when we run this test, it will pass successfully.
+```
+const assert = require('assert')
+
+describe('Creating records', () => {
+  it('saves a user', () => {
+    assert(1 + 1 === 2)
+  })
+})
+
+```
 ### Creating Model Instances
 
 
