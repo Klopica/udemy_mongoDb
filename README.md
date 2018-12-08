@@ -107,10 +107,21 @@ touch test/destroy_test.js
 ```
 
 ### The Test Helper file
-
+The Mocha test framework is by far most popular framework for any type of javascript testing around the NodeJS environment.
+Create test_helper file in /test folder.
+```
+touch test/test_helper.js
+```
+This file will contain any code we might need to set up our testing environment. Initial setup will take care of mongo connection and after successful connection, it will signal Mocha that it is ok to continue with testing. If connection fails, it will throw an error.
 
 ### Mongoose Connection Helper
-
+File 'test_helper.js' contains code that takes care of mongo connection. If connection is successful, it allows mocha to continue with testing, but if connection fails, it returns an error.
+After writing code from this lesson, we can try to run it with command:
+```
+cd users
+node test/test_helper.js
+```
+If everything went OK, message "Good to go!" should be visible in our console.
 
 ### Mongoose Models
 
