@@ -185,11 +185,21 @@ describe('Creating records', () => {
 })
 
 ```
-### Creating Model Instances
+### Creating Model Instances and Saving Users to Mongo
+In this section we will write a test around creating a user and saving it to the database.
 
+We need to make sure that we can use User model that we created earlier so we can save something to database.
 
-### Saving Users to Mongo
+```
+describe('Creating records', () => {
+  it('saves a user', () => {
+    const joe = new User({ name: 'Joe' })
+    joe.save()
 
+  })
+})
+```
+When we run this code, it will always add a new user with name Joe. This, of course is not a good thing and in next section we will try to figure out how to deal with this kind of issues.
 
 ### Dropping Collections
 
