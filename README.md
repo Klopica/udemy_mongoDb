@@ -161,9 +161,20 @@ This model does not represent a single user, it represents an entire collection 
 We need to make sure that any other file in this project has an access to user model we just created. We can do so with ```module.exports``` command.
 
 ### The Basics of Mocha
+Now it is time to test our User model and make sure it actually can insert data into our database. To write this test we need to learn a little bit more about how Mocha works.
+Test that will help us in making sure that we can create a new user and save it to database. Code for this will be written in '/users/test/create_test.js'.
 
+This test file will make use of Mocha functions 'describe' and 'it'. These functions are available to us by default because we installed Mocha dependency earlier.
+
+The purpose of string parameter we pass to 'describe' function is just to modify the testing feedback that we get from Mocha.
+Inside of a function that we pass as second argument of 'describe' function will be placed a variety of 'it' blocks. 'it' is a function just as 'describe' is.
+
+The 'it' function takes in the same arguments as 'describe'.
+The 'it' block is an absolute key to all testing inside Mocha. Whenever Mocha sees an 'it' function, it knows a developer is trying to run some kind of test inside that function. Mocha will queue up all 'it' blocks and will run them all, one at a time.
+Inside every 'it' block we need to make an assertion.
 
 ### Running Mocha test
+How to make an assertion inside our test file?
 
 
 ### Creating Model Instances
