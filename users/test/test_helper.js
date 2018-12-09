@@ -12,6 +12,9 @@ mongoose.connection
   })
 
 // Define a hook that will clean our database before each test we run
-beforeEach(() => {
-  mongoose.connection.collections.users.drop()
+beforeEach((done) => {
+  mongoose.connection.collections.users.drop(() => {
+    // Ready to run the next test
+    done()
+  })
 })

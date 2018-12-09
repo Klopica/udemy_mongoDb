@@ -207,7 +207,12 @@ To make sure that every single test runs in isolation, after each test we will e
 For this purpose we will add a hook in our 'test_helper.js' file. A hook is a function that will be executed before any test gets executed in our test suite.
 
 ### Mocha's Done Callback
+The problem with our last hook is that, making any type of operation on our database is asynchronous and it takes some amount of time to complete. Mocha on the other hand does not have any default idea of asynchronous operations.
+Inside our ```beforeEach``` we are starting our long running process. After this process is complete, we will call 'done' callback provided automatically by Mocha.
 
+Inside ```drop()``` function we will make a callback function that will be executed once it is done dropping our collection of users.
+
+So now every time we run create test, hook will first drop all user collections and then create a new user.
 
 ### Mongoose's isNew Property
 
