@@ -228,7 +228,7 @@ When we call our test with false assertion we get an deprecation error. This wil
 We will set ```mongoose.Promise = global.Promise```. This was we tell mongoose to use ES6 Promise library.
 
 ### Test Setup for Finding Users
-
+There's two distinct ways we can use to get user out of our database. First, we can try to find a user by his name or , second, we can try to find user by a particular given id. These are to different read operations. If we try to find our user by his name, we might get a lot of responses. This is because there are a lot of users saved to database with same name. We would want to use second option if we want to find a very particular user. First option is like a search query, while the second is a lookup.
 
 ### Making Mongo Queries
 
