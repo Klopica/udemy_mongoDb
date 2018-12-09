@@ -202,7 +202,9 @@ describe('Creating records', () => {
 When we run this code, it will always add a new user with name Joe. This, of course is not a good thing and in next section we will try to figure out how to deal with this kind of issues.
 
 ### Dropping Collections
+To make sure that every single test runs in isolation, after each test we will empty our database.
 
+For this purpose we will add a hook in our 'test_helper.js' file. A hook is a function that will be executed before any test gets executed in our test suite.
 
 ### Mocha's Done Callback
 
