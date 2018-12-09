@@ -215,7 +215,14 @@ Inside ```drop()``` function we will make a callback function that will be execu
 So now every time we run create test, hook will first drop all user collections and then create a new user.
 
 ### Mongoose's isNew Property
+In this section we talk about actual assertion inside our 'it' block of 'create_test.js' to make sure that user is actually being saved to database.
 
+Inside our 'it' block we are calling a ```save()``` function. We want to make an assertion after this function finishes and then continue to next test. ```save()``` call will return a Promise. When a promise resolves that means that user has been successfully saved to database. To get callback we need to add ```.then()``` statement. To figure out whether or not user has been saved to database, we're going to rely on mongoose's property ```isNew```. Before user has been saved, this flag will be set to 'true'.
+
+Once user has been saved to mongo and exists in database, flag ```isNew``` will be set to false.
+
+After assertion we will call ```done()``` callback. ```done``` is available to every 'it' block in mocha. We can use it any time. When we reference it in any function, we have to make sure we actually call it somewhere within our 'it' block.
+When we call our test with false assertion we get an deprecation error. This will be fixed in the next section.
 
 ### Default Promise Implementation
 
@@ -276,3 +283,262 @@ So now every time we run create test, hook will first drop all user collections 
 
 
 ## Handling Relational Data
+### Embedding Resources in Models
+
+
+### Nesting Posts on Users
+
+
+### Testing Subdocuments
+
+
+### Adding Subdocuments to Existing Records
+
+
+### Removing Subdocuments
+
+
+### Virtual Types
+
+
+### Definig a Virtual Type
+
+
+### ES6 Getters
+
+
+### Fixing Update Tests
+
+
+## Thinking About Schema Design
+### Challenges of Nested Resources
+
+
+### Embedded Documents vs Separate Collections
+
+
+### BlogPosts vs Posts
+
+
+### Creating Associations with Refs
+
+
+### Test Setup for Associations
+
+
+### Wiring Up Has Many and Has One Relations
+
+
+### Promise.All for Parallel Operations
+
+
+### Populating Queries
+
+
+### Loading Deeply Nested Associations
+
+
+## Mongoose Middleware
+### Cleaning Up with Middleware
+
+
+### Dealing with Cyclic Requires
+
+
+### Pre-Remove Middleware
+
+
+### Testing Pre-Remove Middleware
+
+
+## Handling Big Collections with Pagination
+### Skip and Limit
+
+
+### Writing Skip and Limit Queries
+
+
+### Sorting Collections
+
+
+## Putting Skills to the Test
+### Project Setup
+
+
+### Project overview
+
+
+### First Step - Artist and Album Models
+
+
+### The Album Schema
+
+
+### The Artist Model
+
+
+### Finding Particular Records
+
+
+### FindOne vs FindById
+
+
+### The CreateArtist Operation
+
+
+### Solution to Creating Artist
+
+
+### Deleting Singular Records
+
+
+### Solution to Removing
+
+
+### Editing Records
+
+
+### How to edit Single Artist
+
+
+## Hard Mode Engage
+### Minimum and Maximum Values in a Collection
+
+
+### Solution to Min and Max Queries
+
+
+### Challenge Mode - Search Query
+
+
+### Sorting, Limiting, and Skipping Together
+
+
+### Danger! Big Challenge ahead
+
+
+### Filtering By Single Properties
+
+
+### Filtering with Multiple Props
+
+
+### Handling Text Search
+
+
+### Indexes and Text Search
+
+
+### Batch Updates
+
+
+### The Hidden 'Multi' Setting
+
+
+### Seeding Many Records
+
+
+### Counting The Result Set
+
+
+## MongoDB with Node and Express
+### App Overview
+
+
+### Designing API routes
+
+
+### Project Setup
+
+
+### HTTP request Methods
+
+
+### The Basics Of Express
+
+
+### Express Boilerplate
+
+
+### Handling Requests with Express
+
+
+### Testing Express Apps with mocha
+
+
+### Running Mocha
+
+
+### Project Structure
+
+
+### Refactoring For Controllers and Models
+
+
+### The Driver Model
+
+
+### The Create Drivers Route
+
+
+### The Body Parser Middleware
+
+
+### Testing Driver Creation
+
+
+### More on Testing Driver Creation
+
+
+### Additional Mongoose Setup
+
+
+### Driver Implementation
+
+
+### Testing Endpoints with Postman
+
+
+### Dev vs Test environments
+
+
+### Separate Test Databases
+
+
+### Middleware in Express
+
+
+### Handling Editing of Drivers
+
+
+### Testing Driver Updates
+
+
+### Handling Deletion of Drivers
+
+
+### Testing Driver Deletion
+
+
+### Geography with MongoDB
+
+
+### The GeoJSON Schema
+
+
+### GeoNear Queries
+
+
+### Testing a GeoNear Query
+
+
+### One Big Gotcha
+
+
+### Another Big Gotcha
+
+
+### Testing GeoQueries
+
+
+### RallyCoding
