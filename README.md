@@ -225,7 +225,7 @@ After assertion we will call ```done()``` callback. ```done``` is available to e
 When we call our test with false assertion we get an deprecation error. This will be fixed in the next section.
 
 ### Default Promise Implementation
-
+We will set ```mongoose.Promise = global.Promise```. This was we tell mongoose to use ES6 Promise library.
 
 ### Test Setup for Finding Users
 
